@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
         setTimeout(() => {
        setLoading(false);
-        },2000)
+        },3000)
   },[])
   return (
    <div className='bg-[#272325] min-h-screen flex flex-col'>
@@ -19,7 +19,7 @@ export default function Home() {
       <title>Turbo Barnacle ~ The torrent World</title>
     </Head>
         <Loader isLoading={isLoading}/>
-        <div className='flex items-center flex-col mt-[10%]  min-h-[40vh] w-full'>
+        <div style={isLoading ? {display:'none'}:{display:'flex'}} className='flex items-center flex-col mt-[10%]  min-h-[40vh] w-full'>
           <h1 className='text-4xl text-center w-11/12 m-6 font-bold text-white'>Welcome to <strong className='text-blue-900'>Turbo Barnacle</strong> , The Search Engine!</h1>
           <div className='w-5/12 flex justify-center items-center m-6 border rounded-md'>
           <input className='w-11/12 h-12 text-white text-xl bg-inherit  indent-4 focus:outline-blue-600' placeholder='Search , The torrent world...'></input>
@@ -32,6 +32,9 @@ export default function Home() {
           <Checkbox name='Anime'/>
           <Checkbox name='Other'/>
         </div>
+        </div>
+        <div className='absolute bottom-0 w-full'>
+        <p className='text-white text-center text-xs'>Copyright&copy;ARM Inc. All Rights Reserved 2022</p>
         </div>
    </div>
   )
